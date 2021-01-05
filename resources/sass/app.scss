@@ -1,0 +1,43 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'abstracts/variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Mixins
+@import 'abstracts/mixins';
+
+// Fonts
+@import 'base/fonts';
+
+// Globals
+@import 'globals';
+
+// Layouts
+@import 'layouts/app';
+
+// Parts
+@import 'parts/logo-text';
+@import 'parts/logo';
+@import 'parts/login-modal';
+@import 'parts/vote-modal';
+@import 'parts/vote-prompt';
+
+// Inc
+@import 'inc/header';
+@import 'inc/footer';
+
+// Pages
+@import 'pages/login';
+@import 'pages/instructions';
+@import 'pages/vote';
+@import 'pages/overview';
+@import 'pages/logout';
+@import 'pages/admin-dashboard';
+@import 'pages/candidates';
+@import 'pages/registry-student';
+@import 'pages/student-list';
+@import 'pages/result-doc';

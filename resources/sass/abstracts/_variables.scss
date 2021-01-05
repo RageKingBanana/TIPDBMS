@@ -1,0 +1,27 @@
+// Typography
+//$font-family-sans-serif: 'Comfortaa', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-sans-serif: 'Audiowide', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$client-blue-green: #008080;
+$client-yellow: #FFA500;
+$client-sky-blue: #E1F7FF;
+$client-text-shadow: 1px 2px 3px #494949;
+$client-gray: #767171;
+$client-yellow-2: #eeff04;
+$client-peach: #FFE8CB;
+$client-peach-2:#FFF4E7;
+$client-blue: #4472C4;
+$client-blue-2: #CFD5EA;
+$client-blue-3: #E9EBF5;
+$client-black: black;
+$client-white: rgb(255, 255, 255);
+$theme-colors:(
+    "client-blue-green": $client-blue-green, 'client-yellow-2':$client-yellow-2,
+);
+
+$spacers: (
+    6: 4rem,
+    7: 4.5rem,
+    8: 5rem,
+    9: 5.5rem,
+    10: 6rem,
+);
