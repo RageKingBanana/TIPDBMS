@@ -48,7 +48,7 @@
                                                     <select name="section" class="custom-select"
                                                         id="inputGroupSelect01" required>
 														@foreach($sections as $section)
-															<option value="{{ $section->id }}">{{ $section->level }} / {{ $section->strand->name }} / {{ $section->number }}</option>
+															<option value="{{ $section->id }}">{{ $section->level }} / {{ $section->course->name }} / {{ $section->number }}</option>
 														@endforeach
                                                     </select>
                                                 </div>

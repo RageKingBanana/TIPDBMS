@@ -2,7 +2,7 @@
 
 use App\Candidate;
 use App\Position;
-use App\Strand;
+use App\Course;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Arr;
 
@@ -16,7 +16,7 @@ class CandidateSeeder extends Seeder
     public function run()
     {
         $positions = Position::all();
-        $strands = Strand::all();
+        $strands = Course::all();
         $candidates = [];
 
 		foreach ($positions as $position)
@@ -29,7 +29,7 @@ class CandidateSeeder extends Seeder
                     'name' => "$position->name $count_value",
                     'position_id' => $position->id,
 					'type' => config('constants.candidatetypes.regular'),
-                    'strand_id' => Arr::random($strands->toArray())['id'],
+                    'course_id' => Arr::random($courses->toArray())['id'],
                 ];
 
                 array_push($candidates, $candidate);
@@ -39,7 +39,7 @@ class CandidateSeeder extends Seeder
 				'name' => "$position->name ABSTAIN",
 				'position_id' => $position->id,
 				'type' => config('constants.candidatetypes.abstain'),
-				'strand_id' => Arr::random($strands->toArray())['id'],
+				'course_id' => Arr::random($courses->toArray())['id'],
 			];
 
 			array_push($candidates, $candidate);

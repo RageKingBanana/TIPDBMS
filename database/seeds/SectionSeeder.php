@@ -1,7 +1,7 @@
 <?php
 
 use App\Section;
-use App\Strand;
+use App\Course;
 use Illuminate\Database\Seeder;
 
 class SectionSeeder extends Seeder
@@ -13,13 +13,13 @@ class SectionSeeder extends Seeder
      */
     public function run()
     {
-        $strands = Strand::all();
+        $courses = Course::all();
         $levels = [1,2,3,4];
         $section_numbers = [1,2,3];
 
 		$sections = [];
 
-		foreach($strands as $strand) 
+		foreach($courses as $course) 
 		{
 			foreach($levels as $level) 
 			{
@@ -27,7 +27,7 @@ class SectionSeeder extends Seeder
 				{
 					$section = [
 						'level' => $level,
-						'strand_id' => $strand->id,
+						'course_id' => $course->id,
 						'number' => $section_number
 					];
 

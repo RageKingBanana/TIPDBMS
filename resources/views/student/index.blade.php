@@ -15,7 +15,7 @@
 
 					@foreach($sections as $section)
 						<div>
-							<div class="student-list__card-header">{{ $section->level }} {{ $section->strand->name }} {{ $section->number }} </div>
+							<div class="student-list__card-header">{{ $section->level }} {{ $section->course->name }} {{ $section->number }} </div>
 							<div class="student-list__card-body px-0">
 								<div class="student-list__card-body-container">
 									<div class="candidates__position-body">

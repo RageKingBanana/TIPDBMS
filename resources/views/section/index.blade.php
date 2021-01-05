@@ -32,7 +32,7 @@
                                             <tr>
 												<td>{{ $section->id }}</td>
 												<td>{{ $section->level }}</td>
-												<td class="text-uppercase">{{ $section->strand->name }}</td>
+												<td class="text-uppercase">{{ $section->course->name }}</td>
 												<td>{{ $section->number }}</td>
                                             </tr>
                                             @endforeach
