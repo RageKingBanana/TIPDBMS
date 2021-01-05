@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 use App\User;
 use App\Position;
-use App\Strand;
+use App\Course;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Candidate extends Model
@@ -21,7 +21,7 @@ class Candidate extends Model
         'image',
 		'type',
         'position_id',
-        'strand_id'
+        'course_id'
     ];
 
     /* public function users() */

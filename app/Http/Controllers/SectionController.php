@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Section;
-use App\Strand;
+use App\Course;
 use Illuminate\Http\Request;
 
 class SectionController extends Controller
@@ -11,9 +11,9 @@ class SectionController extends Controller
     public function index()
     {
         $context = [
-            'sections' => Section::with('strand')
+            'sections' => Section::with('course')
                 ->orderby('level')
-                ->orderby('strand_id')
+                ->orderby('course_id')
                 ->orderby('number')
                 ->get()
         ];
@@ -24,7 +24,7 @@ class SectionController extends Controller
     public function create()
     {
         $context = [
-            'strands' => Strand::all(),
+            'courses' => Course::all(),
         ];
 
         return view('section.create', $context);
@@ -33,25 +33,25 @@ class SectionController extends Controller
     public function store(Request $request)
     {
         $level = $request->input('level');
-        $strand_id = $request->input('strand');
+        $course_id = $request->input('course');
         $number = $request->input('number');
 
         $existing_section = Section::where('level', $level)
-            ->where('strand_id', $strand_id)
+            ->where('course_id', $course_id)
             ->where('number', $number)
             ->get();
 
         if (!$existing_section->first()) {
             $section = new Section();
             $section->level = $level;
-            $section->strand_id = $strand_id;
+            $section->course_id = $course_id;
             $section->number = $number;
             $section->save();
 
-			$this->flashGenericModal($request, "Level: {$level} | Strand: {$section->strand->name} | Number: {$number}");
+			$this->flashGenericModal($request, "Level: {$level} | Course: {$section->course->name} | Number: {$number}");
         }
 		else {
-			$this->flashGenericModal($request, "Level: {$level} | Strand: {$existing_section->first()->strand->name} | Number: {$number} - Already Exists", 'Warning');
+			$this->flashGenericModal($request, "Level: {$level} | Course: {$existing_section->first()->course->name} | Number: {$number} - Already Exists", 'Warning');
 		}
 
         return redirect()->back();
@@ -60,9 +60,9 @@ class SectionController extends Controller
     public function destroy(Request $request, $id = null)
     {
         $section = Section::where('level', $request->input('level'))
-            ->where('strand_id', $request->input('strand'))
+            ->where('course_id', $request->input('course'))
             ->where('number', $request->input('number'))
-			->with('strand')
+			->with('course')
             ->first();
 
 		$modal_message = "";
@@ -70,13 +70,13 @@ class SectionController extends Controller
 
 		if($section)
 		{
-			$modal_message = "Level: {$section->level} | Strand: {$section->strand->name} | Number: {$section->number} - Deleted";
+			$modal_message = "Level: {$section->level} | Course: {$section->course->name} | Number: {$section->number} - Deleted";
 			$modal_title = "Success";
 			$section->delete();
 		}
 		else 
 		{
-			$modal_message = "Level: {$request->input('level')} | Strand: {$request->input('strand')} | Number: {$request->input('number')} - Not Found";
+			$modal_message = "Level: {$request->input('level')} | Course: {$request->input('course')} | Number: {$request->input('number')} - Not Found";
 			$modal_title = "Warning";
 		}
 

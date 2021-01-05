@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-use App\Strand;
+use App\Course;
 use App\User;
 
 class Section extends Model
@@ -14,12 +14,12 @@ class Section extends Model
     protected $fillable = [
         'number',
         'level',
-        'strand_id'
+        'course_id'
     ];
 
-    public function strand()
+    public function course()
     {
-        return $this->belongsTo(Strand::class);
+        return $this->belongsTo(Course::class);
     }
 
     public function students()

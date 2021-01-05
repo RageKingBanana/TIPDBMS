@@ -16,12 +16,12 @@ class CreateSectionTable extends Migration
         Schema::create('section', function (Blueprint $table) {
             $table->id();
             $table->unsignedInteger('level');
-			$table->unsignedBigInteger('strand_id');
+			$table->unsignedBigInteger('course_id');
             $table->unsignedInteger('number');
             $table->timestamps();
 
-			$table->unique(['level', 'strand_id', 'number']);
-			$table->foreign('strand_id')->references('id')->on('strand');
+			$table->unique(['level', 'course_id', 'number']);
+			$table->foreign('course_id')->references('id')->on('course');
         });
     }
 

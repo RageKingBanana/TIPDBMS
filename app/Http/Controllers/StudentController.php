@@ -17,12 +17,12 @@ class StudentController extends Controller
     public function index()
     {
         $context = [
-            'sections' => Section::with('strand')
+            'sections' => Section::with('course')
                 ->with(['students' => function ($query) {
                     $query->where('role_id', config('constants.roles.student'))->with('candidates');
                 }])
                 ->orderby('section.level')
-                ->orderby('section.strand_id')
+                ->orderby('section.course_id')
                 ->orderby('section.number')
                 ->get()
         ];
@@ -33,9 +33,9 @@ class StudentController extends Controller
     public function create()
     {
         $context = [
-            'sections' => Section::with('strand')
+            'sections' => Section::with('course')
                 ->orderby('section.level')
-                ->orderby('section.strand_id')
+                ->orderby('section.course_id')
                 ->orderby('section.number')
                 ->get(),
             'students' => User::where('role_id', config('constants.roles.student'))->select('email', 'name')->get()

@@ -8,7 +8,7 @@ use Illuminate\Notifications\Notifiable;
 
 use App\Candidate;
 use App\Section;
-use App\Strand;
+use App\Course;
 
 class User extends Authenticatable
 {

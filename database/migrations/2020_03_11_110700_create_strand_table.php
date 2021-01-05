@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateStrandTable extends Migration
+class CreateCourseTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateStrandTable extends Migration
      */
     public function up()
     {
-        Schema::create('strand', function (Blueprint $table) {
+        Schema::create('course', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->text('desc')->nullable();
@@ -28,6 +28,6 @@ class CreateStrandTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('strand');
+        Schema::dropIfExists('course');
     }
 }

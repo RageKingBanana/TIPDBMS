@@ -8,9 +8,9 @@ use App\Section;
 use App\User;
 use App\Candidate;
 
-class Strand extends Model
+class Course extends Model
 {
-    protected $table = 'strand';
+    protected $table = 'course';
 
     public function sections()
     {

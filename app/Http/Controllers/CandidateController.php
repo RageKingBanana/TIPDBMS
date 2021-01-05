@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Candidate;
 use App\Position;
-use App\Strand;
+use App\Course;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -19,7 +19,7 @@ class CandidateController extends Controller
 	{
 		$context = [
 			'positions' => Position::with(['candidates' => function($query) {
-				$query->where('type', config('constants.candidatetypes.regular'))->withTrashed()->with('strand');
+				$query->where('type', config('constants.candidatetypes.regular'))->withTrashed()->with('course');
 			}])->get()
 		];
 
@@ -34,7 +34,7 @@ class CandidateController extends Controller
 	public function create()
 	{
 		$context = [
-			'strands' => Strand::all(),
+			'courses' => Course::all(),
 			'positions' => Position::all(),
 		];
 
@@ -56,7 +56,7 @@ class CandidateController extends Controller
 			'desc' => $request->input('desc'),
 			'image' => $request->input('image'),
 			'position_id' => $request->input('position'),
-			'strand_id' => $request->input('strand'),
+			'course_id' => $request->input('course'),
 		]);
 
 		if($image)
@@ -95,7 +95,7 @@ class CandidateController extends Controller
 	{
 		$context = [
 			'candidate' => Candidate::where('id', $id)->withTrashed()->first(),
-			'strands' => Strand::all(),
+			'courses' => Course::all(),
 			'positions' => Position::all()
 		];
 
@@ -118,7 +118,7 @@ class CandidateController extends Controller
 		$candidate->name = $request->input('name');
 		$candidate->desc = $request->input('desc');
 		$candidate->position_id = $request->input('position');
-		$candidate->strand_id = $request->input('strand');
+		$candidate->course_id = $request->input('course');
 
 		if(($candidate->image && $image) || $image)
 		{

@@ -16,7 +16,7 @@ class VoteController extends Controller
 	public function index()
 	{
 		$positions = Position::with(['candidates' => function($query) {
-			$query->with('strand')->withCount('users as votes')->orderBy('votes', 'desc');
+			$query->with('course')->withCount('users as votes')->orderBy('votes', 'desc');
 		}])->get();
 
 		foreach($positions as $position)
@@ -46,7 +46,7 @@ class VoteController extends Controller
 	public function create()
 	{
 		$context = [
-			'positions' => Position::with('candidates.strand')->get()
+			'positions' => Position::with('candidates.course')->get()
 		];
 
 
@@ -134,7 +134,7 @@ class VoteController extends Controller
 	public function download()
 	{
 
-		$sections = Section::with('strand')
+		$sections = Section::with('course')
 			->with(['students' => function($query){
 				$query->withCount('candidates as votes');
 			}])
@@ -159,7 +159,7 @@ class VoteController extends Controller
 
 		$context = [
 			'positions' => Position::with(['candidates' => function($query) {
-				$query->with('strand')->withCount('users as votes')->orderBy('votes', 'desc');
+				$query->with('course')->withCount('users as votes')->orderBy('votes', 'desc');
 			}])->get(),
 			'sections' => $sections,
 			'polling_station' => PollingStation::first(),

@@ -25,7 +25,7 @@ class AdminController extends Controller
                         "name" => "John Doesss",
                         "image" => "https://picsum.photos/id/237/1200",
                         "isHidden"=>true,
-                        "strand" => [
+                        "course" => [
                             [
                                 "name" => "PES",
                             ]
@@ -34,7 +34,7 @@ class AdminController extends Controller
                     [
                         "name" => "John Doe",
                         "image" => "https://picsum.photos/id/237/1200",
-                        "strand" => [
+                        "course" => [
                             [
                                 "name" => "PES",
                             ]
@@ -43,7 +43,7 @@ class AdminController extends Controller
                     [
                         "name" => "John Doe",
                         "image" => "https://picsum.photos/id/237/1200",
-                        "strand" => [
+                        "course" => [
                             [
                                 "name" => "PES",
                             ]
@@ -57,7 +57,7 @@ class AdminController extends Controller
                     [
                         "name" => "John Deer",
                         "image" => "https://picsum.photos/id/237/1200",
-                        "strand" => [
+                        "course" => [
                             [
                                 "name" => "MAD",
                             ]
@@ -71,7 +71,7 @@ class AdminController extends Controller
                     [
                         "name" => "John Ding DOng",
                         "image" => "https://picsum.photos/id/237/1200",
-                        "strand" => [
+                        "course" => [
                             [
                                 "name" => "MOAR",
                             ]
@@ -147,17 +147,17 @@ class AdminController extends Controller
         $sections = [
             [
                 'level'=>"11",
-                'strand' => 'abm',
+                'course' => 'cpe',
                 'section'=>'1',
             ],
             [
                 'level'=>"11",
-                'strand' => 'abm',
+                'course' => 'cpe',
                 'section'=>'1',
             ],
             [
                 'level'=>"11",
-                'strand' => 'abm',
+                'course' => 'cpe',
                 'section'=>'1',
             ],
         ];
@@ -172,7 +172,7 @@ class AdminController extends Controller
                 'candidates' => [
                     [
                         "name" => "John Doesss",
-                        "strand" => [
+                        "course" => [
                             [
                                 "name" => "PES",
                             ]
@@ -181,7 +181,7 @@ class AdminController extends Controller
                     ],
                     [
                         "name" => "John Doe",
-                        "strand" => [
+                        "course" => [
                             [
                                 "name" => "PES",
                             ]
@@ -190,7 +190,7 @@ class AdminController extends Controller
                     ],
                     [
                         "name" => "John Doe",
-                        "strand" => [
+                        "course" => [
                             [
                                 "name" => "PES",
                             ]
@@ -204,7 +204,7 @@ class AdminController extends Controller
                 'candidates' => [
                     [
                         "name" => "John Deer",
-                        "strand" => [
+                        "course" => [
                             [
                                 "name" => "MAD",
                             ]
@@ -218,7 +218,7 @@ class AdminController extends Controller
                 'candidates' => [
                     [
                         "name" => "John Ding DOng",
-                        "strand" => [
+                        "course" => [
                             [
                                 "name" => "MOAR",
                             ]

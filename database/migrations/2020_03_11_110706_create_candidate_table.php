@@ -20,13 +20,13 @@ class CreateCandidateTable extends Migration
 			$table->string('image')->nullable();
 			$table->integer('type')->default(config('constants.candidatetypes.regular'));
 			$table->unsignedBigInteger('position_id');
-			$table->unsignedBigInteger('strand_id');
+			$table->unsignedBigInteger('course_id');
 			$table->timestamps();
 			$table->softDeletes();
 
 
 			$table->foreign('position_id')->references('id')->on('position');
-			$table->foreign('strand_id')->references('id')->on('strand');
+			$table->foreign('course_id')->references('id')->on('course');
 		});
 	}
 
