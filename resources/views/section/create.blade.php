@@ -28,9 +28,9 @@
                                         </div>
                                         <div class="form-group custom-form-input-text">
                                             <label for="exampleInputEmail1">course:</label>
-											<select class="form-control" name="course" required>
-												@foreach($courses as $course)
-													<option value="{{ $course->id }}">{{ $course->name }}</option>
+											<select class="form-control" name="strand" required>
+												@foreach($strands as $strand)
+													<option value="{{ $strand->id }}">{{ $strand->name }}</option>
 												@endforeach
 											</select>
                                         </div>
@@ -67,9 +67,9 @@
                                                 </div>
                                                 <div class="form-group custom-form-input-text">
                                                     <label for="exampleInputEmail1">course:</label>
-													<select  class="form-control" name="course" required>
-														@foreach($courses as $course)
-															<option value="{{ $course->id }}">{{ $course->name }}</option>
+													<select  class="form-control" name="strand" required>
+														@foreach($strands as $strand)
+															<option value="{{ $strand->id }}">{{ $strand->name }}</option>
 														@endforeach
 													</select>
                                                 </div>

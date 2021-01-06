@@ -220,7 +220,7 @@
 								<thead>
 									<tr>
 										<th colspan="2">
-											{{ $section->level }}{{ $section->course->name }}{{ $section->number }}
+											{{ $section->level }}{{ $section->strand->name }}{{ $section->number }}
 										</th>
 									</tr>
 								</thead>

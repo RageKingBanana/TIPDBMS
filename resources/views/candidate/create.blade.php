@@ -23,9 +23,9 @@
 								<div class="input-group-prepend">
 									<label class="input-group-text" for="inputGroupSelect01">course</label>
 								</div>
-								<select name="course" class="candidates__input custom-select" id="inputGroupSelect01" required>
-									@foreach($courses as $course)
-										<option value="{{ $course->id }}">{{ $course->name }}</option>
+								<select name="strand" class="candidates__input custom-select" id="inputGroupSelect01" required>
+									@foreach($strands as $strand)
+										<option value="{{ $strand->id }}">{{ $strand->name }}</option>
 									@endforeach
 								</select>
 							</div>

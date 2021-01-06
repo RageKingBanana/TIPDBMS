@@ -26,7 +26,7 @@
                                         <thead>
                                             <tr>
                                                 <th>name</th>
-                                                <th>course</th>
+                                                <th>strand</th>
                                                 <th>position</th>
                                                 <th>votes</th>
                                             </tr>
@@ -42,7 +42,7 @@
 													@else 
 														<tr>
 															<td>{{ $candidate->name }}</td>
-															<td>{{ $candidate->course->name }}</td>
+															<td>{{ $candidate->strand->name }}</td>
 															<td>{{ $position->name }}</td>
 															<td>{{ $candidate->votes }}</td>
 														</tr>
