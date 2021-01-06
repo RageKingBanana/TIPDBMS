@@ -66221,7 +66221,7 @@ console.log("editor module loaded");
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\admin\Documents\GitHub\TIPDBMS\resources\js\editor.js */"./resources/js/editor.js");
+module.exports = __webpack_require__(/*! C:\Users\admin\Documents\GitHub\iuris\resources\js\editor.js */"./resources/js/editor.js");
 
 
 /***/ })

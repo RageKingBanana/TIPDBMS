@@ -3,11 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-<<<<<<< HEAD
 class StrandSeeder extends Seeder
-=======
-class CourseSeeder extends Seeder
->>>>>>> parent of 7add29f... yikes
 {
     /**
      * Run the database seeds.
@@ -16,11 +12,7 @@ class CourseSeeder extends Seeder
      */
     public function run()
     {
-<<<<<<< HEAD
         DB::table('strand')->insert(
-=======
-        DB::table('course')->insert(
->>>>>>> parent of 7add29f... yikes
             [
                 [
                     'name' => 'Computer Engineering',
